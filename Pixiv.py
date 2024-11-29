@@ -23,7 +23,7 @@ except:
     import requests
 
 requests.packages.urllib3.disable_warnings()
-
+file_path = "cookie.txt"
 
 class PixivDatabase:
     def __init__(self, db_file="pixiv_spider.db"):
@@ -146,8 +146,18 @@ class PixivSpider:
         return False
 
     def pixiv_main(self):
-        with open(self.config.get('cookie', 'path'), 'r') as file:
-            cookie = file.read().strip()
+        if os.path.exists(file_path):
+            with open(file_path, "r") as file:
+                cookie = file.read().strip()
+        else:
+            while True:
+                cookie = input("请输入cookie：").strip()
+                if cookie:
+                    with open(file_path, "w") as file:
+                        file.write(cookie)
+                    break
+                else:
+                    print("输入不能为空，请重新输入。")
 
         self.headers = {
             'accept': 'application/json',
