@@ -88,7 +88,7 @@ ERROR: No matching distribution found for resquests`
     不要泄露给他人)
 ```
 
-此项储存在本地pixiv_spider.db数据库中，图片存储在img中
+此项储存在本地cookie.txt文件中，失效了可以删除重新填入
 
 ## 特别提醒
 
