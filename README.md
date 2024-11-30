@@ -12,12 +12,13 @@ Python:3.6+
 ## 食用方法
 
 **Linux/OSX:**
-1. 
+
 ```shell
 git clone https://github.com/nyaasuki/PixivSpider.git && cd ./PixivSpider
 ```
-2. 修改配置文件config.ini,配置文件内有说明
-3. 
+
+修改配置文件config.ini,配置文件内有说明
+ 
 ```shell
 python3 Pixiv.py
 ```
@@ -28,13 +29,13 @@ python3 Pixiv.py
 
 2. 修改配置文件config.ini,配置文件内有说明
 
-2. 配置好环境（python）
+3. 配置好环境（python）
 
-3. 打开你的CMD窗口
+4. 打开你的CMD窗口
 
-4. 输入python+‘ ’    ←这是一个空格
+5. 输入python+‘ ’    ←这是一个空格
 
-5. 用鼠标把**Pixiv.py**这个文件拖到cmd窗口
+6. 用鼠标把**Pixiv.py**这个文件拖到cmd窗口
 
    ​	^_^
 
