@@ -125,8 +125,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-
-
+config.ini
+pixiv_spider.db
+cookie.txt
 pixiv.json
 img/
 .idea/inspectionProfiles/profiles_settings.xml

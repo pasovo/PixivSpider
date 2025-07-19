@@ -1,7 +1,7 @@
 """
 P站小爬虫 爬每日排行榜
-环境需求：Python3.6+ / Redis
-项目地址：https://github.com/nyaasuki/PixivSpider
+环境需求:Python3.6+ / Redis
+项目地址:https://github.com/nyaasuki/PixivSpider
 
 """
 
@@ -13,6 +13,7 @@ try:
     import configparser
     import sqlite3
     import requests
+    import urllib3
 
 except:
     print('检测到缺少必要包！正在尝试安装！.....')
@@ -21,8 +22,10 @@ except:
     import configparser
     import sqlite3
     import requests
+    import urllib3
 
-requests.packages.urllib3.disable_warnings()
+
+urllib3.disable_warnings()
 file_path = "cookie.txt"
 
 class PixivDatabase:
@@ -64,7 +67,7 @@ class PixivSpider:
 
     def load_config(self, config_file):
         config = configparser.ConfigParser()
-        config.read(config_file)
+        config.read(config_file, encoding='utf-8')
         return config
 
     def get_proxy(self, config_file='config.ini'):
@@ -146,6 +149,7 @@ class PixivSpider:
         return False
 
     def pixiv_main(self):
+        cookie = None
         if os.path.exists(file_path):
             with open(file_path, "r") as file:
                 cookie = file.read().strip()
